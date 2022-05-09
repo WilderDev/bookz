@@ -1,0 +1,12 @@
+<div class="row mb-3" *ngFor="let bookEl of searchResults">
+  <div class="col-md-12">
+    <app-book [book]="bookEl"></app-book>
+    <button
+      class="float-right"
+      style="border: none; font-size: 1rem"
+      (click)="onAddToBookshelf(bookEl)"
+    >
+      &plus;
+    </button>
+  </div>
+</div>

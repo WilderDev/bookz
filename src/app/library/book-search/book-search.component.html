@@ -1,0 +1,28 @@
+<form
+  #searchFormRef="ngForm"
+  (ngSubmit)="onBookSearch(searchFormRef.value.search)"
+  class="form-inline"
+>
+  <!-- SEARCH - input -->
+  <div class="form-group mr-2">
+    <label for="search" class="sr-only">Search</label>
+    <input
+      type="search"
+      class="form-control"
+      id="search"
+      name="search"
+      placeholder="Search for a book!"
+      [(ngModel)]="searchFormRef.value.search"
+      required
+    />
+  </div>
+
+  <!-- SUBMIT - button -->
+  <button
+    type="submit"
+    class="btn btn-primary"
+    [disabled]="!searchFormRef.valid"
+  >
+    Search
+  </button>
+</form>
